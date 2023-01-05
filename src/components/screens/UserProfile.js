@@ -8,7 +8,7 @@ export default function UserProfile() {
     const [userProfile, setUserProfile] = useState(null);
     const { userid } = useParams();
     useEffect(() => {
-        fetch(`/user/${userid}`, {
+        fetch(`https://viralit-api.onrender.com/user/${userid}`, {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('jwt')
             },
@@ -20,7 +20,7 @@ export default function UserProfile() {
     }, [])
 
     const followUser = () => {
-        fetch('/follow', {
+        fetch('https://viralit-api.onrender.com/follow', {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function UserProfile() {
     }
 
     const unfollowUser = () => {
-        fetch('/unfollow', {
+        fetch('https://viralit-api.onrender.com/unfollow', {
             method: "put",
             headers: {
                 "Content-Type": "application/json",

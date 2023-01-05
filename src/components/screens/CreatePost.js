@@ -10,7 +10,7 @@ export default function CreatePost() {
 
   useEffect(() => {
     if (url) {
-      fetch('/createpost', {
+      fetch('https://viralit-api.onrender.com/createpost', {
         method: "post",
         headers: {
           "Content-Type": "application/json",

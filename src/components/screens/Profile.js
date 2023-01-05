@@ -13,7 +13,7 @@ export default function Profile() {
   }, [])
 
   useEffect(() => {
-    fetch('/mypost', {
+    fetch('https://viralit-api.onrender.com/mypost', {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem('jwt')
       },
@@ -36,7 +36,7 @@ export default function Profile() {
         body: data,
       }).then(res => res.json())
         .then(data => {
-          fetch('/updateprofilepic', {
+          fetch('https://viralit-api.onrender.com/updateprofilepic', {
             method: "put",
             headers: {
               "Content-Type": "application/json",

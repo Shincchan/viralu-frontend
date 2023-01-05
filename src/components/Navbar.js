@@ -62,7 +62,7 @@ export default function Navbar() {
 
     const fetchUsers=(query)=>{
         setSearch(query);
-        fetch('/searchusers',{
+        fetch('https://viralit-api.onrender.com/searchusers',{
             method:"post",
             headers:{
                 'Content-Type':'application/json',

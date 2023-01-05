@@ -10,7 +10,7 @@ export default function Home() {
   const {state,dispatch} = useContext(UserContext); 
   useEffect(() => {
     setloading(true);
-    fetch('/allpost', {
+    fetch('https://viralit-api.onrender.com/allpost', {
       method:"get",
       headers: {
         "Authorization": "Bearer "+localStorage.getItem('jwt')
@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   const likePost = (id)=>{
-      fetch('/like',{
+      fetch('https://viralit-api.onrender.com/like',{
         method :"put",
         headers:{
           'Content-Type':'application/json',
@@ -55,7 +55,7 @@ export default function Home() {
       })
   }
   const unlikePost = (id)=>{
-    fetch('/unlike',{
+    fetch('https://viralit-api.onrender.com/unlike',{
       method :"put",
       headers:{
         'Content-Type':'application/json',
@@ -82,7 +82,7 @@ export default function Home() {
     })
 }
   const makeComment = (text,postId)=>{
-      fetch('/comment',{
+      fetch('https://viralit-api.onrender.com/comment',{
         method:"put",
         headers:{
           'Content-Type':'application/json',
@@ -111,7 +111,7 @@ export default function Home() {
   }
 
 const deletePost =(postId)=>{
-  fetch(`/deletepost/${postId}`,{
+  fetch(`https://viralit-api.onrender.com/deletepost/${postId}`,{
     method:"delete",
     headers:{
       'Content-Type':'application/json',
@@ -131,7 +131,7 @@ const deletePost =(postId)=>{
 }
 
 const deleteComment=  (postId,commentId)=>{
-  fetch(`/deletecomment/${postId}/${commentId}`,{
+  fetch(`https://viralit-api.onrender.com/deletecomment/${postId}/${commentId}`,{
     method:"delete",
     headers:{
       'Content-Type':'application/json',

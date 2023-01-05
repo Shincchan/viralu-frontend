@@ -51,7 +51,7 @@ export default function Signup() {
 
 
     const uploadFields = ()=>{
-        fetch("/signup", {
+        fetch("https://viralit-api.onrender.com/signup", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
